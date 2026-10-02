@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Pastelería artesanal: pasteles personalizados, cupcakes y postres para ocasiones especiales." />
+  <title>A&A Sweet Bakery | Pastelería artesanal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement" data-i18n="announcement">Pedidos personalizados con 48–72 h de anticipación · Entrega local disponible</div>
+  <header class="nav-wrap">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="A&A Sweet Bakery, inicio"><img class="brand-logo" src="assets/aa-sweet-bakery-logo.jpg" alt="A&A Sweet Bakery"><strong>A&A Sweet Bakery</strong></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" data-i18n-aria="menuAria">☰</button>
+      <div class="nav-links" id="navLinks"><a href="#productos" data-i18n="navCakes">Pasteles</a><a href="#personaliza" data-i18n="navCustom">Personaliza</a><a href="#nosotros" data-i18n="navAbout">Nosotros</a><a href="#contacto" data-i18n="navContact">Contacto</a></div>
+      <div class="nav-actions"><div class="language-switcher" role="group" aria-label="Language / Idioma"><button class="lang-btn active" data-lang="es">ES</button><button class="lang-btn" data-lang="en">EN</button></div><div class="theme-switcher" role="group" data-i18n-aria="themeAria"><button class="theme-btn active" data-theme="blue" data-i18n-aria="themeBlueAria" title="Azul / Blue"><span class="theme-dot blue"></span></button><button class="theme-btn" data-theme="black" data-i18n-aria="themeBlackAria" title="Negro / Black"><span class="theme-dot black"></span></button><button class="theme-btn" data-theme="pink" data-i18n-aria="themePinkAria" title="Rosa / Pink"><span class="theme-dot pink"></span></button></div><button class="cart-btn" id="cartBtn" data-i18n-aria="cartAria"><span data-i18n="bag">Bolsa</span> <b id="cartCount">0</b></button></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span data-i18n="heroEyebrow">HECHO A MANO · HORNEADO CON CALMA</span></p>
+        <h1><span data-i18n-html="heroTitle">Pasteles que convierten momentos en <em>recuerdos.</em></span></h1>
+        <p class="lead"><span data-i18n="heroLead">Diseños elegantes, ingredientes seleccionados y sabores que se sienten tan especiales como la ocasión.</span></p>
+        <div class="hero-actions"><a class="btn primary" href="#productos"> <span data-i18n="viewCollection">Ver colección</span></a><a class="btn ghost" href="#personaliza"> <span data-i18n="createCake">Crear mi pastel →</span></a></div>
+        <div class="trust"><span><span data-i18n="trustRating">★ 4.9/5 clientes felices</span></span><span><span data-i18n="trustHandmade">✓ Elaboración artesanal</span></span><span><span data-i18n="trustCustom">♡ Personalizable</span></span></div>
+      </div>
+      <div class="hero-art" aria-label="Pastel de celebración decorado">
+        <div class="blob"></div><div class="cake"><div class="candle">✦</div><div class="tier top"></div><div class="tier bottom"></div><div class="plate"></div></div>
+        <div class="floating-card"><small data-i18n="weeklyFavorite">FAVORITO DE LA SEMANA</small><strong>Vanilla Berry</strong><span data-i18n="from48">Desde $48</span></div>
+      </div>
+    </section>
+
+    <section class="section container" id="productos">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="collectionEyebrow">NUESTRA COLECCIÓN</p><h2 data-i18n="collectionTitle">Un sabor para cada celebración</h2></div><div class="filters" id="filters"><button class="active" data-filter="all" data-i18n="filterAll">Todos</button><button data-filter="clasico" data-i18n="filterClassic">Clásicos</button><button data-filter="chocolate">Chocolate</button><button data-filter="frutal" data-i18n="filterFruit">Frutales</button></div></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="custom-section" id="personaliza">
+      <div class="container custom-grid">
+        <div><p class="eyebrow" data-i18n="customEyebrow">TU IDEA, NUESTRO HORNO</p><h2 data-i18n="customTitle">Diseña tu pastel personalizado</h2><p data-i18n="customLead">Elige tamaño, sabor y estilo. Obtén un estimado al instante y envíanos tu solicitud.</p><ul><li data-i18n="customLi1">Diseños para cumpleaños, bodas y eventos</li><li data-i18n="customLi2">Opciones sin gluten disponibles bajo solicitud</li><li data-i18n="customLi3">Confirmación final por nuestro equipo</li></ul></div>
+        <form class="builder" id="builderForm">
+          <label><span data-i18n="occasionLabel">Ocasión</span><select id="occasion"><option value="birthday" data-i18n="birthday">Cumpleaños</option><option value="wedding" data-i18n="wedding">Boda</option><option value="anniversary" data-i18n="anniversary">Aniversario</option><option value="event" data-i18n="event">Evento</option></select></label>
+          <label><span data-i18n="sizeLabel">Tamaño</span><select id="size"><option value="48" data-i18n="size6">6” · 8–10 porciones</option><option value="68" data-i18n="size8">8” · 14–18 porciones</option><option value="92" data-i18n="size10">10” · 22–28 porciones</option></select></label>
+          <label><span data-i18n="flavorLabel">Sabor</span><select id="flavor"><option value="vanilla" data-i18n="flavorVanilla">Vainilla & frutos rojos</option><option value="chocolate" data-i18n="flavorChocolate">Chocolate belga</option><option value="redvelvet">Red velvet</option><option value="lemon" data-i18n="flavorLemon">Limón & frambuesa</option></select></label>
+          <label><span data-i18n="messageLabel">Mensaje</span><input id="message" maxlength="40" placeholder="Ej. Feliz cumpleaños, Ana" data-i18n-placeholder="messagePlaceholder" /></label>
+          <div class="estimate"><span data-i18n="estimateFrom">Estimado desde</span><strong id="estimate">$48</strong></div>
+          <button class="btn primary full" type="submit"> <span data-i18n="requestDesign">Solicitar este diseño</span></button>
+          <small data-i18n="priceNote">El precio final depende de decoración, complejidad y entrega.</small>
+        </form>
+      </div>
+    </section>
+
+    <section class="section container" id="nosotros">
+      <div class="story"><div class="story-art"><img class="story-logo" src="assets/aa-sweet-bakery-logo.jpg" alt="A&A Sweet Bakery"><span data-i18n="since2018">Desde 2018</span></div><div><p class="eyebrow" data-i18n="storyEyebrow">NUESTRA HISTORIA</p><h2 data-i18n="storyTitle">Pequeños lotes. Grandes momentos.</h2><p data-i18n="storyP1">A&A Sweet Bakery nace de una idea sencilla: que un pastel puede ser el centro emocional de una celebración. Trabajamos cada pedido en pequeños lotes para cuidar sabor, textura y acabado.</p><p data-i18n="storyP2">Esta demo está preparada para sustituir el contenido, productos, precios y datos del negocio por los definitivos.</p></div></div>
+    </section>
+
+    <section class="newsletter" id="contacto"><div class="container newsletter-inner"><div><p class="eyebrow" data-i18n="newsletterEyebrow">ALGO DULCE EN TU INBOX</p><h2 data-i18n="newsletterTitle">Recibe novedades y sabores de temporada.</h2></div><form id="newsletterForm"><input type="email" required placeholder="tu@email.com" data-i18n-placeholder="emailPlaceholder" data-i18n-aria="emailAria"><button class="btn dark"> <span data-i18n="subscribe">Suscribirme</span></button></form></div></section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><a class="brand light" href="#inicio"><img class="brand-logo" src="assets/aa-sweet-bakery-logo.jpg" alt="A&A Sweet Bakery"><strong>A&A Sweet Bakery</strong></a><p data-i18n="footerTagline">Pastelería artesanal para celebrar bonito.</p></div><div><strong data-i18n="explore">Explora</strong><a href="#productos" data-i18n="collection">Colección</a><a href="#personaliza" data-i18n="customized">Personalizados</a><a href="#nosotros" data-i18n="navAbout">Nosotros</a></div><div><strong data-i18n="service">Atención</strong><span data-i18n="hours">Mar–Sáb · 9:00–18:00</span><span>hola@aasweetbakery.com</span><span>(000) 000-0000</span></div></div><div class="container copyright">© <span id="year"></span> A&A Sweet Bakery. <span data-i18n="rights">Todos los derechos reservados.</span></div></footer>
+
+  <aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><h3 data-i18n="yourBag">Tu bolsa</h3><button id="closeCart" data-i18n-aria="closeAria">×</button></div><div id="cartItems" class="cart-items"></div><div class="drawer-foot"><div><span data-i18n="subtotal">Subtotal</span><strong id="subtotal">$0.00</strong></div><button class="btn primary full" id="checkoutBtn"> <span data-i18n="continueOrder">Continuar pedido</span></button><small data-i18n="paymentDemo">Demo: conecta Stripe/Shopify/WooCommerce para pagos reales.</small></div></aside><div class="overlay" id="overlay"></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
